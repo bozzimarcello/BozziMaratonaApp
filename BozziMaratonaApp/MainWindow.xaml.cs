@@ -20,18 +20,18 @@ namespace BozziMaratonaApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        ElencoMaratone elenco;
+        ElencoMaratone Elenco;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            elenco = new ElencoMaratone();
+            Elenco = new ElencoMaratone();
         }
 
         private void BtnLeggiFile_Click(object sender, RoutedEventArgs e)
         {
-            elenco.LeggiDaFile();
+            Elenco.LeggiDaFile();
         }
     }
 }
