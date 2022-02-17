@@ -27,11 +27,22 @@ namespace BozziMaratonaApp
             InitializeComponent();
 
             Elenco = new ElencoMaratone();
+            DgrElenco.ItemsSource = Elenco.InsiemeMaratone;
         }
 
         private void BtnLeggiFile_Click(object sender, RoutedEventArgs e)
         {
             Elenco.LeggiDaFile();
+            DgrElenco.Items.Refresh();
+        }
+
+        private void BtnCercaNome_Click(object sender, RoutedEventArgs e)
+        {
+            string nome = TxtNome.Text;
+            string città = TxtCittà.Text;
+
+            int tempoImpiegato = Elenco.CercaNomeCittà(nome, città);
+            LblTempo.Content = tempoImpiegato.ToString();
         }
     }
 }

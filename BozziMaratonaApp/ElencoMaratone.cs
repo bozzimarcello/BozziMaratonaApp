@@ -9,16 +9,16 @@ namespace BozziMaratonaApp
 {
     class ElencoMaratone
     {
-        public List<Maratona> Elenco { get; set; }
+        public List<Maratona> InsiemeMaratone { get; set; }
 
         public ElencoMaratone()
         {
-            Elenco = new List<Maratona>();
+            InsiemeMaratone = new List<Maratona>();
         }
 
         public void Aggiungi(Maratona unaMaratona)
         {
-            Elenco.Add(unaMaratona);
+            InsiemeMaratone.Add(unaMaratona);
         }
 
         public int TrasformaTempo(string oreMinuti)
@@ -47,6 +47,21 @@ namespace BozziMaratonaApp
 
                 Aggiungi(unaMaratona);
             }
+        }
+
+        public int CercaNomeCittà(string nome, string città)
+        {
+            int minuti = 0;
+
+            foreach(var m in InsiemeMaratone)
+            {
+                if (m.Nome==nome && m.Città==città)
+                {
+                    minuti = m.TempoInMinuti;
+                }
+            }
+
+            return minuti;
         }
     }
 }

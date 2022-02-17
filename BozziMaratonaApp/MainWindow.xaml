@@ -8,5 +8,13 @@
         Title="MainWindow" Height="450" Width="400">
     <StackPanel>
         <Button x:Name="BtnLeggiFile" Content="Leggi da file" Click="BtnLeggiFile_Click"/>
+        <DataGrid x:Name="DgrElenco" />
+        <Label Content="Ricerca per nome e città"/>
+        <Label Content="Nome"/>
+        <TextBox x:Name="TxtNome" />
+        <Label Content="Città"/>
+        <TextBox x:Name="TxtCittà" />
+        <Button x:Name="BtnCercaNome" Content="Cerca per nome e città" Click="BtnCercaNome_Click"/>
+        <Label x:Name="LblTempo" />
     </StackPanel>
 </Window>
